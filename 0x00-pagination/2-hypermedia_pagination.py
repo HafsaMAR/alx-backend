@@ -60,6 +60,7 @@ class Server:
         # if start == (0, 0):
         #     return []
         return self.dataset()[start:end]
+
     def get_hyper(self, page: int = 1, page_size: int = 10) -> Dict:
         """
         Retrieve hyperlinked data for the specified page.
@@ -71,7 +72,7 @@ class Server:
         next_page = page + 1 if page < total_pages else None
         prev_page = page - 1 if page > 1 else None
         return {
-            'page_size' : page_size,
+            'page_size': page_size,
             'page': page,
             'data': page_data,
             'next_page': next_page,
