@@ -45,7 +45,7 @@ class Server:
         assert index is None or (index >= 0 and index < len(self.dataset()))
         start_index = index if index is not None else 0
         next_index = start_index + page_size
-        data = list(self.indexed_dataset().values())[start_index:next_index]
+        data = self.dataset()[start_index:next_index]
         return {
                 'index': index,
                 'next_index': next_index,
